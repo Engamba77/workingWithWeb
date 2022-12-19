@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const password2 = document.getElementById(password2);
+const password2 = document.getElementById("password2");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -10,23 +10,29 @@ form.addEventListener("submit", (e) => {
   validateInputs();
 });
 
+const setError = (element, message) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
+
+  errorDisplay.innerText = message;
+  inputControl.classList.add("error");
+  inputControl.classList.remove("success");
+};
+
 const setSuccess = (element) => {
-  const div = div.parentElement;
-  const errorDisplay = div.querySelector(".error");
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
 
   errorDisplay.innerText = "";
-  div.classList.add("success");
-  div.classList.remove("error");
+  inputControl.classList.add("success");
+  inputControl.classList.remove("error");
+};
+const isValidEmail = (email) => {
+  const regExp =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regExp.test(String(email).toLowerCase());
 };
 
-const validRegex =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-return validRegex.test(String(email).toLowerCase());
-
-const setError = (element, message) => {
-  const div = element.parentElement;
-  const errorDisplay = div.querySelector(".error");
-};
 const validateInputs = () => {
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
@@ -34,29 +40,31 @@ const validateInputs = () => {
   const password2Value = password2.value.trim();
 
   if (usernameValue === "") {
-    setError(username, "Username is required");
+    setError(username, "Username is required!");
   } else {
     setSuccess(username);
   }
 
   if (emailValue === "") {
-    setError(email, "Email is required");
+    setError(email, "Email is required!");
   } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address");
+    setError(email, "Enter a valid email address!");
   } else {
     setSuccess(email);
   }
+
   if (passwordValue === "") {
-    setError(password, "Password is required");
+    setError(password, "Password is required!");
   } else if (passwordValue.length < 8) {
-    setError(password, "Password must be atleast 8 characters");
+    setError(password, "Password must be atleast 8 characters!");
   } else {
     setSuccess(password);
   }
+
   if (password2Value === "") {
-    setError(password2, "Please,confirm your password");
+    setError(password2, "Please confirm your password!");
   } else if (password2Value !== passwordValue) {
-    setError(password2, "Password does not match");
+    setError(password2, "Password does not match!");
   } else {
     setSuccess(password2);
   }
