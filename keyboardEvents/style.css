@@ -1,0 +1,14 @@
+#keyboard {
+  padding: 10px;
+  width: 300px;
+  display: flex;
+}
+.btn {
+  padding: 10px;
+  width: 100px;
+  display: flex;
+  margin-top: 10px;
+  background-color: red;
+  border: none;
+  color: azure;
+}
