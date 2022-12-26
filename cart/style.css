@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(19, 136, 186);
+}
+
+.cart {
+  background: red;
+  width: 500px;
+  height: 500px;
+}
+#image {
+  height: 300px;
+  width: 300px;
+}
+#cartButton {
+  background-color: red;
+}
