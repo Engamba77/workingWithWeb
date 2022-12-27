@@ -1,4 +1,5 @@
-function addCart() {
+function addCart(imageUrl, name, price) {
+  const container = document.querySelector(".container");
   const cart = document.createElement("div");
   const img = document.createElement("img");
 
@@ -7,56 +8,42 @@ function addCart() {
   let button;
   let priceValue;
 
-  img.src =
-    "https://guesseu.scene7.com/is/image/GuessEU/M63H24W7JF0-L302-ALTGHOST?wid=1500&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0";
+  img.src = imageUrl;
 
-  document.body.appendChild(cart);
-  cart.appendChild(img);
-
-  cart.style.width = "300px";
-  cart.style.height = "500px";
-  cart.style.background = "#E0E7E8";
-
-  img.style.width = "100%";
-  img.style.height = "300px";
+  img.setAttribute("id", "image");
+  container.appendChild(img);
+  container.appendChild(cart);
 
   function item() {
     itemName = document.createElement("h2");
-    itemName.textContent = "Check Print Shirt";
+    itemName.textContent = name;
     cart.appendChild(itemName);
 
     itemName.style.background = "#FAD15F";
   }
   item();
 
-  function price() {
+  function priceComponent() {
     priceTag = document.createElement("p");
     priceValue = document.createElement("span");
     priceTag.textContent = "Price: $";
-    priceValue.textContent = "35";
+    priceValue.textContent = price;
 
-    // priceTag.style.background = "orange";
     priceTag.appendChild(priceValue);
     cart.appendChild(priceTag);
   }
-  price();
+  priceComponent();
 
   function btn() {
     button = document.createElement("button");
+    button.setAttribute("id", "cartButton");
     button.innerHTML = "Add to Cart";
-    cart.appendChild(button);
-    // button.setAttribute("id", cartButton);
-
-    button.style.background = "#F96344";
-    button.style.border = "none";
-    button.style.padding = "10px";
-    button.style.width = "100%";
-    button.style.color = "white";
-    // button.style.fontWeight = "bold";
+    container.appendChild(button);
   }
   btn();
-
-  //   cart.setAttribute("class", cart);
-  //   img.setAttribute("id", image);
 }
-addCart();
+addCart(
+  "https://guesseu.scene7.com/is/image/GuessEU/M63H24W7JF0-L302-ALTGHOST?wid=1500&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0",
+  "CHECK PRINT SHIRT",
+  110
+);

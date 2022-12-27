@@ -2,15 +2,20 @@ body {
   background-color: rgb(19, 136, 186);
 }
 
-.cart {
-  background: red;
-  width: 500px;
+.container {
+  width: 300px;
   height: 500px;
+  background: #e0e7e8;
 }
+
 #image {
   height: 300px;
   width: 300px;
 }
 #cartButton {
-  background-color: red;
+  background: #f96344;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  color: white;
 }
