@@ -1,0 +1,41 @@
+.container {
+  background-color: rgb(231, 179, 244);
+  width: 400px;
+  height: 200px;
+  display: inline-block;
+  margin-top: 20%;
+  margin-left: 40%;
+}
+#h1 {
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+}
+#btn {
+  color: white;
+  background: green;
+  border: none;
+  padding: 8px;
+  margin-left: 3px;
+  border-radius: 3px;
+}
+#inputText {
+  padding: 7px;
+  margin-left: 13%;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(195, 158, 244, 1) 100%
+  );
+}
+#btnDel {
+  background-color: red;
+  border: none;
+  padding: 8px;
+  color: aliceblue;
+  margin: 3px;
+}
