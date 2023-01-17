@@ -1,0 +1,23 @@
+body {
+  background: rgba(212, 228, 239, 1);
+}
+.container {
+  width: 400px;
+  height: auto;
+  margin-left: 5%;
+}
+.products {
+  width: 170px;
+  float: left;
+}
+#image {
+  width: 150px;
+  height: 128px;
+}
+
+.div {
+  background-color: bisque;
+  box-shadow: 0px 5px 13px -5px rgba(0, 0, 0, 0.84);
+  -webkit-box-shadow: 0px 5px 13px -5px rgba(0, 0, 0, 0.84);
+  -moz-box-shadow: 0px 5px 13px -5px rgba(0, 0, 0, 0.84);
+}

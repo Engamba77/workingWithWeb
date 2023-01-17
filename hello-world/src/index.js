@@ -10,6 +10,10 @@ import DisplayProperties from "./DisplayProperties";
 import DisplayKey from "./DisplayKey";
 import TodoApp from "./todoapp/Todo";
 import ValidateForm from "./formvalidation/form";
+import Student from "./student";
+import ProductList from "./productDetails";
+import Counter from "./counter";
+import StateTest from "./statetest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,7 +25,11 @@ root.render(
     {/* <DisplayProperties /> */}
     {/* <DisplayKey /> */}
     {/* <TodoApp /> */}
-    <ValidateForm />
+    {/* <ValidateForm /> */}
+    {/* <Student /> */}
+    <ProductList />
+    <Counter />
+    <StateTest />
   </div>
 );
 

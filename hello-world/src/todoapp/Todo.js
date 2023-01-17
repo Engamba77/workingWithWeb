@@ -3,7 +3,7 @@ import "./style.css";
 
 class TodoApp extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       items: [],
       value: "",
@@ -52,7 +52,12 @@ class TodoApp extends Component {
             {this.state.items.map((item, index) => (
               <li key={index}>
                 {item}
-                <button id="btnDel" onClick={this.handleDelete}>
+                <button
+                  id="btnDel"
+                  onClick={() => {
+                    this.handleDelete(index);
+                  }}
+                >
                   DELETE
                 </button>
               </li>
